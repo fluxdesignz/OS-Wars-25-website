@@ -23,21 +23,42 @@
             <a class="navreg" href="/index.html">Credits</a>
         <a class="navsel" href="/join.html" style="background-color: rgba(255, 255, 255, 0.041);">Join</a>
     </nav>
-    <main style="width: 100%; height: 100vh;">
-        <img src="img/25bg.svg" style="z-index: -1; width: 10%; max-width: 1000px;">
+    <nav style="position: sticky; visibility: hidden;">
+        <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <path d="M29 22H39.803L38.197 18H29C25.6863 18 23 20.6863 23 24H27C27 22.8954 27.8954 22 29 22Z" fill="white" fill-opacity="0.8"/>
+            <path d="M25.3936 18C23.9152 18.8905 22.7936 20.3117 22.291 22H16L14.3941 18H25.3936Z" fill="white" fill-opacity="0.8"/>
+            <path d="M32 24C32 27.3137 29.3137 30 26 30H20C18.8954 30 18 30.8954 18 32C18 33.1046 18.8954 34 20 34H27L28.6059 38H20C16.6863 38 14 35.3137 14 32C14 28.6863 16.6863 26 20 26H26C27.1046 26 28 25.1046 28 24L-nan -nanL28 24C28 23.4477 28.4477 23 29 23H32V24Z" fill="white" fill-opacity="0.8"/>
+            <path d="M35 26C38.3137 26 41 28.6863 41 32C41 35.3137 38.3137 38 35 38H29.6059L28 34H35C36.1046 34 37 33.1046 37 32C37 30.8954 36.1046 30 35 30H29.6064C31.0848 29.1095 32.2064 27.6883 32.709 26H35Z" fill="white" fill-opacity="0.8"/>
+            <path d="M27 24C27 24.5523 26.5523 25 26 25H23.085C23.0304 24.6747 23 24.3408 23 24H27Z" fill="white" fill-opacity="0.8"/>
+        </svg></a>
+            <a class="navsel" href="/">Home</a>
+            <a class="navreg" href="/index.html">About</a>
+            <a class="navreg" href="/index.html">Our socials</a>
+            <a class="navreg" href="/index.html">Credits</a>
+        <a class="navsel" href="/join.html" style="background-color: rgba(255, 255, 255, 0.041);">Join</a>
+    </nav>
+    <main style="width: 100%; height: 95vh; position: absolute;">
+        <h1>The next generation of OS Wars.</h1>
     </main>
 <script>
 let lastScrollY = window.scrollY;
 const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > lastScrollY) {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll === 0) {
+        // Always show nav at top of page
+        nav.classList.remove("hide");
+    } else if (currentScroll > lastScrollY) {
+        // Scrolling down
         nav.classList.add("hide");
     } else {
+        // Scrolling up
         nav.classList.remove("hide");
     }
-    lastScrollY = window.scrollY;
+
+    lastScrollY = currentScroll;
 });
 </script>
-
 </body>
